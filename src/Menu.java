@@ -7,6 +7,8 @@ public class Menu {
 		System.out.println("3. 메뉴 품절");
 		System.out.println("4. 인기메뉴");
 		System.out.println("5. 종료");
+		System.out.println("5. 종료");
+		
 	}
 
 }
