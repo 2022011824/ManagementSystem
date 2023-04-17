@@ -1,48 +1,48 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class RestaurantMenuManager {
-	RestaurantMenu restaurantMenu;
+	ArrayList<RestaurantMenu> restaurantMenus = new ArrayList<RestaurantMenu>();
 	Scanner input;
 	RestaurantMenuManager(Scanner input){
 		this.input = input;
 	}
-	public void addMenu() { //함수 addMenu 정의
-		restaurantMenu = new RestaurantMenu();
+	public void addMenu() { 
+		RestaurantMenu restaurantMenu = new RestaurantMenu();
 		System.out.println("Restaurant menu type(pasta/pizza/side): ");
 		input.nextLine();
 		restaurantMenu.type = input.nextLine();
-		//Restaurant menu type(pasta/pizza/side)을 문자열 변수 menuType에 대입
 		System.out.println("Restaurant menu name: ");
 		restaurantMenu.name = input.nextLine();
-		//Restaurant menu name을 문자열 변수 menuName에 대입
 		System.out.println("Restaurant menu price(Won): ");
 		restaurantMenu.price = input.nextInt();
-		//Restaurant menu price를 정수형 변수 menuPrice에 대입
+		restaurantMenus.add(restaurantMenu);
 	}
 	
-	public void deleteMenu() { //함수 deletMenu 정의
+	public void deleteMenu() { 
 		System.out.println("Restaurant menu name: ");
 		input.nextLine();
 		String menuName = input.nextLine();
-		//Restaurant menu name을 문자열 변수 menuName에 대입
-		if (restaurantMenu == null) {
+		int index = -1;
+		for(int i =0; i<restaurantMenus.size();i++) {
+			if (restaurantMenus.get(i).name.equals(menuName)) {
+				index = i;
+				break;
+			}
+		}
+		if (index>=0) {
+			restaurantMenus.remove(index);
+			System.out.println("the"+menuName+ "is deleted.");
+		}
+		else {
 			System.out.println("the restaurant menu has not been registered.");
 			return;
 		}
-		menuName = restaurantMenu.name;
-		if(restaurantMenu.name == menuName) {
-			restaurantMenu = null;
-			System.out.println("the restaurant menu is delete.");
-		}
 	}
 	
-	public void viewMenu() { //함수 viewFullMenu 정의
-		System.out.println("Restaurant menu name:");
-		input.nextLine();
-		String menuName = input.nextLine();
-		menuName = restaurantMenu.name;
-		if(restaurantMenu.name == menuName) {
-			restaurantMenu.printInfo();
+	public void viewMenu() { 
+		for (int i=0; i<restaurantMenus.size();i++) {
+			restaurantMenus.get(i).printInfo();
 		}
 	}
 }
