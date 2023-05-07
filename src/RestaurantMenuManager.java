@@ -1,5 +1,8 @@
 import java.util.Scanner;
+
+import restaurantmenus.MenuKind;
 import restaurantmenus.RestaurantMenu;
+import restaurantmenus.Setmenus;
 import restaurantmenus.Sidemenus;
 import java.util.ArrayList;
 
@@ -14,32 +17,39 @@ public class RestaurantMenuManager {
 		int kind = 0;
 		RestaurantMenu restaurantMenu;
 		while(kind != 1 && kind != 2 && kind != 3 && kind != 4) {
-			System.out.println("1. Steck");
-			System.out.println("2. Pilaf");
-			System.out.println("3. Pasta");
-			System.out.println("4. Side");
-			System.out.print("Select num Restaurant menu Kind between 1~4 ");
+			System.out.println("1. Set");
+			System.out.println("2. Steak");
+			System.out.println("3. Pilaf");
+			System.out.println("4. Pasta");
+			System.out.println("5. Side");
+			System.out.print("Select num Restaurant menu Kind between 1~4: ");
 			kind = input.nextInt();
 			if (kind == 1) {
-				restaurantMenu = new RestaurantMenu();
+				restaurantMenu = new Setmenus(MenuKind.Set);
 				restaurantMenu.getUserInput(input);
 				restaurantMenus.add(restaurantMenu);
 				break;
 			}
 			else if(kind == 2) {
-				restaurantMenu = new RestaurantMenu();
+				restaurantMenu = new RestaurantMenu(MenuKind.Steak);
 				restaurantMenu.getUserInput(input);
 				restaurantMenus.add(restaurantMenu);
 				break;
 			}
 			else if(kind == 3) {
-				restaurantMenu = new RestaurantMenu();
+				restaurantMenu = new RestaurantMenu(MenuKind.Pilaf);
 				restaurantMenu.getUserInput(input);
 				restaurantMenus.add(restaurantMenu);
 				break;
 			}
 			else if(kind == 4) {
-				restaurantMenu = new Sidemenus();
+				restaurantMenu = new RestaurantMenu(MenuKind.Pasta);
+				restaurantMenu.getUserInput(input);
+				restaurantMenus.add(restaurantMenu);
+				break;
+			}
+			else if(kind == 5) {
+				restaurantMenu = new Sidemenus(MenuKind.Side);
 				restaurantMenu.getUserInput(input);
 				restaurantMenus.add(restaurantMenu);
 				break;
@@ -48,7 +58,6 @@ public class RestaurantMenuManager {
 				System.out.print("Select num Restaurant menu Kind between 1~4 ");
 			}
 		}
-		
 	}
 	
 	public void deleteMenu() { 

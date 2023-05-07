@@ -7,8 +7,13 @@ public class RestaurantMenu {
 	protected String name;
 	protected int price;
 	protected int spicy;
+	protected String drink = "none";
 	
 	public RestaurantMenu() {
+	}
+	
+	public RestaurantMenu(MenuKind kind) {
+		this.kind = kind;
 	}
 	
 	public RestaurantMenu(String name, int price) {
@@ -21,12 +26,28 @@ public class RestaurantMenu {
 		this.price = price;
 		this.spicy = spicy;
 	}
+	
+	public RestaurantMenu(MenuKind kind, String name, int price, int spicy) {
+		this.kind = kind;
+		this.name = name;
+		this.price = price;
+		this.spicy = spicy;
+	}
+	
 	public MenuKind getKind() {
 		return kind;
 	}
 
 	public void setKind(MenuKind kind) {
 		this.kind = kind;
+	}
+	
+	public String getDrink() {
+		return drink;
+	}
+
+	public void setDrink(String drink) {
+		this.drink = drink;
 	}
 
 	public String getName() {
@@ -52,23 +73,44 @@ public class RestaurantMenu {
 	public void setSpicy(int spicy) {
 		this.spicy = spicy;
 	}
-
+	
 	public void printInfo() {
-		System.out.println("Restaurant menu name:"+name+" \nprice:"+price+"\nspicy:"+spicy);
+		String skind = "none";
+		switch(this.kind) {
+		case Set:
+			skind = "Set";
+			break;
+		case Steak:
+			skind = "Steak";
+			break;
+		case Pilaf:
+			skind = "Pilaf";
+			break;
+		case Pasta:
+			skind = "Pasta";
+			break;
+		case Side:
+			skind = "Side";
+			break;
+		default:
+		}
+		System.out.println("---------------------");
+		System.out.println("kind:"+skind+"\nmain:" +name+ "\nprice:"+price +"\nspicy:"+spicy);
+		System.out.println("---------------------");
 	}
 	
 	public void getUserInput(Scanner input) {
 		System.out.print("Restaurant menu name: ");
 		input.nextLine();
 		String name = input.nextLine();
-		this.setName(name);
+		this.name = name;
 		
 		System.out.println("Restaurant menu price(Won): ");
 		int price = input.nextInt();
-		this.setPrice(price);
+		this.price = price;
 		
 		System.out.println("Restaurant menu spicy(Lv.1~5): ");
 		int spicy = input.nextInt();
-		this.setSpicy(spicy);
+		this.spicy = spicy;
 	}
 }

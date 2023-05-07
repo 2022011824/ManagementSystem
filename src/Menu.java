@@ -6,7 +6,6 @@ public class Menu {
 		RestaurantMenuManager restaurantMenuManager = new RestaurantMenuManager(input);
 		
 		int num = -1; 
-		int i=9;
 		while(num != 5) { 
 			System.out.println("*Restaurant Menu Management Menu");
 			System.out.println("1. Add restaurant menu");
