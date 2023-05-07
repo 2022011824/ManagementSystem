@@ -34,6 +34,13 @@ public class RestaurantMenu {
 		this.spicy = spicy;
 	}
 	
+	public RestaurantMenu(MenuKind kind, String name, int price, int spicy, String drink) {
+		this.kind = kind;
+		this.name = name;
+		this.price = price;
+		this.spicy = spicy;
+		this.drink = drink;
+	}
 	public MenuKind getKind() {
 		return kind;
 	}
