@@ -16,13 +16,13 @@ public class RestaurantMenuManager {
 	public void addMenu() { 
 		int kind = 0;
 		RestaurantMenu restaurantMenu;
-		while(kind != 1 && kind != 2 && kind != 3 && kind != 4) {
+		while(kind != 1 && kind != 2 && kind != 3 && kind != 4 && kind != 5) {
 			System.out.println("1. Set");
 			System.out.println("2. Steak");
 			System.out.println("3. Pilaf");
 			System.out.println("4. Pasta");
 			System.out.println("5. Side");
-			System.out.print("Select num Restaurant menu Kind between 1~4: ");
+			System.out.print("Select num Restaurant menu Kind between 1~5: ");
 			kind = input.nextInt();
 			if (kind == 1) {
 				restaurantMenu = new Setmenus(MenuKind.Set);
@@ -55,7 +55,7 @@ public class RestaurantMenuManager {
 				break;
 			}
 			else {
-				System.out.print("Select num Restaurant menu Kind between 1~4 ");
+				System.out.print("Select num Restaurant menu Kind between 1~5 ");
 			}
 		}
 	}
