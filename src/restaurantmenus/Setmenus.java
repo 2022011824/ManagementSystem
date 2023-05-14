@@ -2,7 +2,7 @@ package restaurantmenus;
 import java.util.Scanner;
 
 
-public class Setmenus extends RestaurantMenu {
+public class Setmenus extends RestaurantMenu implements MenusInput {
 	protected String mainMenuName;
 	protected String drinkMenuName;
 	public Setmenus(MenuKind kind) {

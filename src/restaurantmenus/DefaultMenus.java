@@ -1,10 +1,10 @@
 package restaurantmenus;
+
 import java.util.Scanner;
 
-
-public class Sidemenus extends RestaurantMenu implements MenusInput {
+public class DefaultMenus extends RestaurantMenu implements MenusInput {
 	
-	public Sidemenus(MenuKind kind) {
+	public DefaultMenus(MenuKind kind) {
 		super(kind);
 	}
 	
@@ -18,22 +18,9 @@ public class Sidemenus extends RestaurantMenu implements MenusInput {
 		int price = input.nextInt();
 		this.price = price;
 		
-		char answer = 'x';
-		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N' ) {
-			System.out.print("Is this menu spicy? (Y/N)");
-			answer = input.next().charAt(0);
-			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Spicy Level(1~5): ");
-				int spicy = input.nextInt();
-				this.spicy = spicy;
-			}
-			else if(answer == 'n' || answer == 'N') {
-				this.spicy = 0;
-			}
-			else {
-				
-			}
-		}
+		System.out.println("Restaurant menu spicy(Lv.1~5): ");
+		int spicy = input.nextInt();
+		this.spicy = spicy;
 	}
 	
 	public void printInfo() {
