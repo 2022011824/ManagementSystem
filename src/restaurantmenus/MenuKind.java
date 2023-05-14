@@ -6,5 +6,4 @@ public enum MenuKind {
 	Pilaf,
 	Pasta,
 	Side
-	
 }

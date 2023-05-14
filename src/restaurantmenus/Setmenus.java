@@ -71,5 +71,4 @@ public class Setmenus extends RestaurantMenu implements MenusInput {
 		System.out.println("kind:"+skind+"\nmain:" +name+ "\ndrink:"+ drink+ "\nprice:"+price +"\nspicy:"+spicy);
 		System.out.println("---------------------");
 	}
-
 }
