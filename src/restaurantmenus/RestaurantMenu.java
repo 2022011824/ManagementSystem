@@ -1,7 +1,5 @@
 package restaurantmenus;
 
-import java.util.Scanner;
-
 public abstract class RestaurantMenu {
 	protected MenuKind kind = MenuKind.Steak; 
 	protected String name;
