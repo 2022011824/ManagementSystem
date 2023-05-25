@@ -2,7 +2,6 @@ package restaurantmenus;
 
 import java.io.Serializable;
 import java.util.Scanner;
-
 import exception.PriceRormatException;
 
 public abstract class RestaurantMenu implements MenusInput, Serializable {

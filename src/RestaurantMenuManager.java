@@ -2,7 +2,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import exception.PriceRormatException;
 import restaurantmenus.DefaultMenus;
 import restaurantmenus.MenuKind;

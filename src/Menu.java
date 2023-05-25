@@ -1,6 +1,5 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import exception.PriceRormatException;
 import log.EventLogger;
 import java.io.FileInputStream;
@@ -9,7 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
 
 public class Menu {
 	static EventLogger logger = new EventLogger("log.txt");
