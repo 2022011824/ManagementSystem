@@ -1,10 +1,16 @@
 package restaurantmenus;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.PriceRormatException;
 
-public abstract class RestaurantMenu implements MenusInput {
+public abstract class RestaurantMenu implements MenusInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4246693821939616516L;
+	
 	protected MenuKind kind = MenuKind.Steak; 
 	protected String name;
 	protected int price;

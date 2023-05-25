@@ -1,0 +1,2 @@
+5월 26, 2023 2:04:47 오전 log.EventLogger log
+INFO: view a list of restaurant menu

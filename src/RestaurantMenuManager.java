@@ -1,18 +1,23 @@
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import exception.PriceRormatException;
 import restaurantmenus.DefaultMenus;
 import restaurantmenus.MenuKind;
 import restaurantmenus.MenusInput;
-import restaurantmenus.RestaurantMenu;
 import restaurantmenus.Setmenus;
 import restaurantmenus.Sidemenus;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
 
-public class RestaurantMenuManager {
+public class RestaurantMenuManager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6908573159063832509L;
+
 	ArrayList<MenusInput> restaurantMenus = new ArrayList<MenusInput>();
-	Scanner input;
+	transient Scanner input;
 	RestaurantMenuManager(Scanner input){
 		this.input = input;
 	}
