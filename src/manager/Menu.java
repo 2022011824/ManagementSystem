@@ -1,4 +1,7 @@
+package manager;
+
 import java.util.InputMismatchException;
+import gui.WindowFrame;
 import java.util.Scanner;
 import exception.PriceRormatException;
 import log.EventLogger;
@@ -20,6 +23,7 @@ public class Menu {
 			restaurantMenuManager = new RestaurantMenuManager(input);
 		}
 		
+		WindowFrame frame = new WindowFrame(restaurantMenuManager);
 		selecttMenu(input, restaurantMenuManager);
 		putObject(restaurantMenuManager, "restaurantMenuManager.ser");
 	}
@@ -58,7 +62,6 @@ public class Menu {
 				}
 				num =  -1;
 			} catch (PriceRormatException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

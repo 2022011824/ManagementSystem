@@ -1,3 +1,5 @@
+package manager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -6,9 +8,9 @@ import exception.PriceRormatException;
 import restaurantmenus.DefaultMenus;
 import restaurantmenus.MenuKind;
 import restaurantmenus.MenusInput;
+import restaurantmenus.RestaurantMenu;
 import restaurantmenus.Setmenus;
 import restaurantmenus.Sidemenus;
-
 public class RestaurantMenuManager implements Serializable {
 	/**
 	 * 
@@ -143,12 +145,19 @@ public class RestaurantMenuManager implements Serializable {
 		}
 	}
 	
+	public int size() {
+		return restaurantMenus.size();
+	}
+	
+	public MenusInput get(int index) {
+		return (RestaurantMenu) restaurantMenus.get(index);
+	}
 	public void showEditMenu() {
 		System.out.println("** Restaurant Menu Info Edit Menu **");
 		System.out.println("1. Edit Name");
 		System.out.println("2. Edit Price");
 		System.out.println("3. Edit Spicy");
 		System.out.println("4. Exit");
-		System.out.println("Select onr number between 1 - 4: ");
+		System.out.println("Select one number between 1 - 4: ");
 	}
 }

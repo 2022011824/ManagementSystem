@@ -5,14 +5,24 @@ import exception.PriceRormatException;
 
 public interface MenusInput {
 	
-	public String getName();
+	public void setKind(MenuKind kind);
+	
+	public MenuKind getKind();
 	
 	public void setName(String name);
 	
+	public String getName();
+	
 	public void setPrice(int price) throws PriceRormatException;
+	
+	public int getPrice();
 	
 	public void setSpicy(int spicy);
 	
+	public int getSpicy();
+	
+	public String getDrink();
+
 	public void printInfo();
 	
 	public void getUserInput(Scanner input);

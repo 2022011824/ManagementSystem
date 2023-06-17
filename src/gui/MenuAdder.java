@@ -6,9 +6,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 import javax.swing.JTextField;
+import manager.Menu;
+import manager.RestaurantMenuManager;
 
-public class MenuAdder extends JFrame {
-	public MenuAdder() {
+public class MenuAdder extends JPanel {
+	
+	WindowFrame frame;
+	
+	public MenuAdder(WindowFrame frame) {
+		this.frame = frame;
+		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 		
@@ -41,10 +48,8 @@ public class MenuAdder extends JFrame {
 		
 		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6);
 		
-		this.setSize(300,300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.setContentPane(panel);
+		this.add(panel);
 		this.setVisible(true);
 	}
 }
