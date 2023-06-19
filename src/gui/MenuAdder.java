@@ -5,6 +5,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+
+import listeners.MenuAddCancelListener;
+import listeners.MenuAdderListener;
+
 import javax.swing.JTextField;
 import manager.Menu;
 import manager.RestaurantMenuManager;
@@ -12,18 +16,14 @@ import manager.RestaurantMenuManager;
 public class MenuAdder extends JPanel {
 	
 	WindowFrame frame;
+	RestaurantMenuManager restaurantMenuManager;
 	
-	public MenuAdder(WindowFrame frame) {
+	public MenuAdder(WindowFrame frame, RestaurantMenuManager restaurantMenuManager) {
 		this.frame = frame;
+		this.restaurantMenuManager = restaurantMenuManager;
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
-		
-		JLabel labelKind = new JLabel("Add menu Kind: ", JLabel.TRAILING);
-		JTextField fieldKind = new JTextField(10);
-		labelKind.setLabelFor(fieldKind);
-		panel.add(labelKind);
-		panel.add(fieldKind);
 		
 		JLabel labelName = new JLabel("Main menu name: ", JLabel.TRAILING);
 		JTextField fieldName = new JTextField(10);
@@ -39,14 +39,21 @@ public class MenuAdder extends JPanel {
 		
 		JLabel labelSpicy = new JLabel("Main menu spicy(Lv.1~5):", JLabel.TRAILING);
 		JTextField fieldSpicy = new JTextField(10);
+		
+		JButton saveButton = new JButton("save");
+		saveButton.addActionListener(new MenuAdderListener(fieldName, fieldPrice, fieldSpicy, restaurantMenuManager));
+		
+		JButton cancelButton = new JButton("cancel");
+		cancelButton.addActionListener(new MenuAddCancelListener(frame));
+		
 		labelSpicy.setLabelFor(fieldSpicy);
 		panel.add(labelSpicy); 
 		panel.add(fieldSpicy);
 		
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		panel.add(saveButton);
+		panel.add(cancelButton);
 		
-		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6);
+		SpringUtilities.makeCompactGrid(panel, 4, 2, 6, 6, 6, 6);
 		
 		
 		this.add(panel);

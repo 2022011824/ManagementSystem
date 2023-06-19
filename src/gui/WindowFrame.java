@@ -8,6 +8,7 @@ import gui.RestaurantMenuView;
 public class WindowFrame extends JFrame{
 	
 	RestaurantMenuManager restaurantMenuManager;
+	
 	MenuSelection menuSelection;
 	MenuAdder menuAdder;
 	RestaurantMenuView restaurantMenuView;
@@ -19,7 +20,7 @@ public class WindowFrame extends JFrame{
 		
 		this.restaurantMenuManager = restaurantMenuManager;
 		this.menuSelection= new MenuSelection(this);
-		this.menuAdder = new MenuAdder(this);
+		this.menuAdder = new MenuAdder(this, this.restaurantMenuManager);
 		this.restaurantMenuView = new RestaurantMenuView(this,this.restaurantMenuManager);
 		
 		this.setupPanel(menuSelection);

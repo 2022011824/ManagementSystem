@@ -23,6 +23,16 @@ public class RestaurantMenuManager implements Serializable {
 		this.input = input;
 	}
 	
+	public void addMenu(String kind, String name, int price, int spicy ) {
+		MenusInput menusInput = new DefaultMenus(MenuKind.Steak);
+		menusInput.getUserInput(input);
+		restaurantMenus.add(menusInput);
+	}
+	
+	public void addMenu(MenusInput menusInput) {
+		restaurantMenus.add(menusInput);
+	}
+	
 	public void addMenu() { 
 		int kind = 0;
 		MenusInput menusInput;

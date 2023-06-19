@@ -7,19 +7,18 @@ import gui.MenuAdder;
 import gui.RestaurantMenuView;
 import gui.WindowFrame;
 
-public class ButtonAddListener implements ActionListener {
+public class MenuAddCancelListener implements ActionListener {
 	
 	WindowFrame frame;
 	
-	public ButtonAddListener(WindowFrame frame) {
+	public MenuAddCancelListener(WindowFrame frame) {
 		this.frame = frame; 
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton) e.getSource();
 		frame.getContentPane().removeAll();
-		frame.getContentPane().add(frame.getMenuAdder());
+		frame.getContentPane().add(frame.getMenuSelection());
 		frame.revalidate();
 		frame.repaint();
 	}

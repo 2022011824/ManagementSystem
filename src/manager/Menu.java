@@ -1,4 +1,4 @@
-package manager;
+  package manager;
 
 import java.util.InputMismatchException;
 import gui.WindowFrame;
